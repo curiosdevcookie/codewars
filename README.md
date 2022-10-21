@@ -1,2 +1,4 @@
 # codewars
-These are my katas .
+=======
+These are my katas from [codewars](https://www.codewars.com).
+>>>>>>> origin/main
