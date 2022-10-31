@@ -9,9 +9,6 @@ Example
 ""             =>  ""
 */
 
-const string = 'camelCasing';
-
 function solution(string) {
-  const camelCase = string.split(/(?=[A-Z])/).join(' ');
-  return camelCase;
+  return string.split(/(?=[A-Z])/).join(' ');
 }
