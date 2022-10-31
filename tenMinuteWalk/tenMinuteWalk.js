@@ -4,25 +4,15 @@
 
 Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!). */
 
-
-const walk = ['n', 'e', 'w', 'e', 'n', 'e', 'w', 'e', 'n', 'e'];
-
 function isValidWalk(walk) {
-
   const countOfDirections = walk.reduce(function (directions, b) {
     directions[b] = ++directions[b] || 1;
     return directions;
   }, {});
 
   function hasCorrectReturnDirections(countOfDirections) {
-    return (countOfDirections['n'] === countOfDirections['s']) && (countOfDirections['e'] === countOfDirections['w']) ? true : false;
+    return (countOfDirections['n'] === countOfDirections['s']) && (countOfDirections['e'] === countOfDirections['w']);
   }
 
-  function check10() {
-    return (walk.length === 10 ? true : false);
-  }
-
-  return ((hasCorrectReturnDirections(countOfDirections) === true && check10(walk.length) === true) ? true : false);
+  return (hasCorrectReturnDirections(countOfDirections) && walk.length === 10);
 }
-
-console.log(`Your walk is ${isValidWalk(walk) ? "valid." : "invalid."}`);
